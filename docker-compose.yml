@@ -6,12 +6,12 @@ services:
     image: edmitry/postgres
     restart: always
     volumes:
+      - socks:/socks
       - postgres_data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: app
-      POSTGRES_USER: root
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
