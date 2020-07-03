@@ -3,9 +3,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN addgroup --system --gid 3000 app && adduser --uid 3000 --gid 3000 --no-create-home --system app
 
-ARG DEPS="vim nano mc"
-RUN apt-get update && apt-get install -y $DEPS
-
 RUN echo "locales locales/default_environment_locale select en_US.UTF-8" | debconf-set-selections \
     && echo "locales locales/locales_to_be_generated multiselect en_US.UTF-8 UTF-8, ru_RU.UTF-8 UTF-8" | debconf-set-selections \
     && rm "/etc/locale.gen" \
