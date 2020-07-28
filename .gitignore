@@ -1,5 +1,7 @@
+# files
+/docker-compose.override.yml
+
 # directories
-/.idea/
 /tmp/
 
 # keep
@@ -8,6 +10,15 @@
 # debug/cache
 bash.exe.stackdump
 nohup.out
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # OS-specific files
 .DS_Store
