@@ -8,12 +8,11 @@ services:
     volumes:
       - socks:/socks
       - postgres_data:/var/lib/postgresql/data
-      - .:/app
     ports:
       - 5432:5432
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: postgres
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 1s
